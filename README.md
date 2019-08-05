@@ -45,6 +45,14 @@ After that's in all you would need to do is add the following code to your befor
 * Then, run the assignment method using the .runRoundRobinAssignment();
     * rrAssigner.runRoundRobinAssignment();
 
+Example:
+
+```
+Map<String, Account_Round_Robin_Users__c> roundRobinUserMap = Utils.createRoundRobinUserMap('Account_Round_Robin_Users__c');
+RoundRobinAssignment rrAssigner = new RoundRobinAssignment(Trigger.new, roundRobinUserMap);
+rrAssigner.runRoundRobinAssignment();
+```
+
 After, you should be ready to test out by inserting multiple records and each record should be assigned to the different users in the Round Robin.
 
 If you don't have any triggers in place it gets slightly more difficult. Start off by adding the trigger framework to your org. 
