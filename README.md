@@ -35,9 +35,9 @@ If you already have triggers in place then you're pretty much done. You just hav
 
 After that's in all you would need to do is add the following code to your before insert trigger:
 
-* Create a round robin user map - Map<String, SObject> and call the Utils.createRoundRobinUserMap(String customSettingName) method
+* Create a round robin user map - Map<String, Your_Custom_Setting_API_Name_Here> and call the Utils.createRoundRobinUserMap(String customSettingName) method
     * The string parameter is the API Name of the Custom Setting
-    * Map<String, SObject> roundRobinUserMap = Utils.createRoundRobinUserMap('Account_Round_Robin_Users__c');
+    * Map<String, Account_Round_Robin_Users__c> roundRobinUserMap = Utils.createRoundRobinUserMap('Account_Round_Robin_Users__c');
 
 * After, instantiate the RoundRobinAssignment class and pass in Trigger.New and the roundRobinUserMap
     * RoundRobinAssignment rrAssigner = new RoundRobinAssignment(Trigger.new, roundRobinUserMap);
@@ -48,7 +48,7 @@ After that's in all you would need to do is add the following code to your befor
 Example:
 
 ```
-Map<String, SObject> roundRobinUserMap = Utils.createRoundRobinUserMap('Account_Round_Robin_Users__c');
+Map<String, Account_Round_Robin_Users__c> roundRobinUserMap = Utils.createRoundRobinUserMap('Account_Round_Robin_Users__c');
 RoundRobinAssignment rrAssigner = new RoundRobinAssignment(Trigger.new, roundRobinUserMap);
 rrAssigner.runRoundRobinAssignment();
 ```
@@ -73,9 +73,9 @@ Once you have added the trigger framework Apex classes in your org, next you hav
     * protected override void beforeInsert() {}
 
 * Inside of this beforeInsert() method, we want to add in the same code provided above
-    * Create a round robin user map - Map<String, SObject> and call the Utils.createRoundRobinUserMap(String customSettingName) method
+    * Create a round robin user map - Map<String, Your_Custom_Setting_API_Name_Here> and call the Utils.createRoundRobinUserMap(String customSettingName) method
       * The string parameter is the API Name of the Custom Setting
-      * Map<String, SObject> roundRobinUserMap = Utils.createRoundRobinUserMap('Account_Round_Robin_Users__c');
+      * Map<String, Account_Round_Robin_Users__c> roundRobinUserMap = Utils.createRoundRobinUserMap('Account_Round_Robin_Users__c');
 
     * After, instantiate the RoundRobinAssignment class and pass in Trigger.New and the roundRobinUserMap
       * RoundRobinAssignment rrAssigner = new RoundRobinAssignment(Trigger.new, roundRobinUserMap);
@@ -102,7 +102,7 @@ Example of full AccountTriggerHandler class calling the Round Robin Assignment.
 ```
 public class AccountTriggerHandler extends TriggerHandler {
   protected override void beforeInsert() {
-    Map<String, SObject> roundRobinUserMap = Utils.createRoundRobinUserMap('Account_Round_Robin_Users__c');
+    Map<String, Account_Round_Robin_Users__c> roundRobinUserMap = Utils.createRoundRobinUserMap('Account_Round_Robin_Users__c');
     RoundRobinAssignment rrAssigner = new RoundRobinAssignment(Trigger.new, roundRobinUserMap);
     rrAssigner.runRoundRobinAssignment();
   }
