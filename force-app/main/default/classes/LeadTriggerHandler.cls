@@ -10,7 +10,7 @@
 
 public class LeadTriggerHandler extends TriggerHandler{
   protected override void beforeInsert() {
-    Map<String, Lead_Round_Robin_Users__c> roundRobinUserMap = Utils.createRoundRobinUserMap('Lead_Round_Robin_Users__c');
+    Map<String, SObject> roundRobinUserMap = Utils.createRoundRobinUserMap('Lead_Round_Robin_Users__c');
     RoundRobinAssignment rrAssigner = new RoundRobinAssignment(Trigger.new, roundRobinUserMap);
     rrAssigner.runRoundRobinAssignment();
   }
