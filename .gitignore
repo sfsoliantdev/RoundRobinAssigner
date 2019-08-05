@@ -4,6 +4,7 @@
 
 # Salesforce cache
 .sfdx/
+.vim-force/
 
 # Logs
 logs

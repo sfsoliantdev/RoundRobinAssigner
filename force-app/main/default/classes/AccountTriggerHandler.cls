@@ -10,7 +10,7 @@
 
 public class AccountTriggerHandler extends TriggerHandler {
   protected override void beforeInsert() {
-    Map<String, Account_Round_Robin_Users__c> roundRobinUserMap = AccountTriggerHelper.getRoundRobinUsers();
+    Map<String, Account_Round_Robin_Users__c> roundRobinUserMap = Utils.createRoundRobinUserMap('Account_Round_Robin_Users__c');
     RoundRobinAssignment rrAssigner = new RoundRobinAssignment(Trigger.new, roundRobinUserMap);
     rrAssigner.runRoundRobinAssignment();
   }
