@@ -1,4 +1,4 @@
-*** Guide to adding the Round Robin Assignment in your org ***
+**Guide to adding the Round Robin Assignment in your org**
 
 Before cloning, or forking the repository, you will want to create a Custom Setting for the users that will be a part of the Round Robin.
 These users will be those that you want to assign to the records that are created.
@@ -29,7 +29,7 @@ Example:
 
 Once you have the custom settings created, you can clone, or fork, the repository to access the Round Robin Assignment logic.
 
-*** Running the Round Robin Assignment through before insert triggers ***
+**Running the Round Robin Assignment through before insert triggers**
 
 If you already have triggers in place then you're pretty much done. You just have to make sure the RoundRobinAssignment.cls and RoundRobinAssignment_TEST.cls Apex classes are in your org.
 
@@ -102,7 +102,7 @@ public class AccountTriggerHandler extends TriggerHandler {
 ```
 
 
-*** Running the Round Robin Assignment through Process Builder ***
+**Running the Round Robin Assignment through Process Builder**
 
 The Round Robin Assignment can also be run through Process Builder after the code is in your org.
 
@@ -129,7 +129,7 @@ Example Process Builder on Account below.
 
 ![sample-process-builder](/images/Sample-Process-Builder.png)
 
-*** Final Note - Only one method (trigger or process builder) should be used to run the Round Robin Assignment. Using both Triggers and Process Builder will cause issues. ***
+**Final Note - Only one method (trigger or process builder) should be used to run the Round Robin Assignment. Using both Triggers and Process Builder will cause issues.**
 
 
 
